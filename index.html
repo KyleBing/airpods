@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>苹果耳机参数对比</title>
+    <meta name='description' content="苹果耳机参数对比,AirPods, AirPods Pro">
+    <meta name='keywords' content="苹果耳机参数对比,AirPods, AirPods Pro">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/airpods.css?v=20220123230122">
+    <link rel="shortcut icon" href="imgs/logo_black.png" type="image/png">
+    <link rel="apple-touch-icon" href="imgs/logo_black.png">
+    <script src="../../lib/js/vue_2.66.js"></script>
+    <style>
+        [v-cloak]{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<div id="app" v-cloak>
+    <div class="card-container" :style="heightApp === 0? '': `height: ${heightApp}px`">
+        <div class="copyright">
+
+            <div>
+                <div class="title mb-6">
+<!--                   <img :src="`./imgs/logo/${model}.png`" alt="Apple Chip LOGO">-->
+                    <img src="./imgs/airpods.svg" alt="Apple Chip LOGO">
+                    <h1>苹果 AirPods 参数大全</h1>
+                </div>
+            </div>
+
+
+            <div class="author">
+                <p><a class="link" target="_blank" href="https://en.wikipedia.org/wiki/Apple-designed_processors">wikipedia</a> ·
+                    <a class="link" href="https://kylebing.cn">kylebing</a>
+                </p>
+                <p>
+                    <a class="link" href="https://kylebing.cn/tools/iphone">iPhone 参数</a> ·
+                    <a class="link" href="https://kylebing.cn/tools/ipad">iPad 参数</a>
+                </p>
+                <p>·</p>
+                <p>
+                    <span>2020.06.05</span> ~
+                    <span>2022.01.23</span>
+                </p>
+            </div>
+        </div>
+
+        <!-- CHIP LIST -->
+        <div class="chip" v-for="(item, index) in AirPods" :key="`item.name-${index}`">
+            <div class="chip-img">
+                <img onerror="this.src = './imgs/airpods/airpods.svg'"
+                     :src="`./imgs/airpods/${item.name}.svg`"
+                     :alt="item.name">
+            </div>
+
+            <div class="chip-name">
+                <h2>{{item.name}}</h2>
+                <p>
+                    <span>{{item.dateInit || '-'}}</span>
+<!--                    <span> ~ {{item.dateEnd}}</span>-->
+                </p>
+            </div>
+
+            <div class="info-list-group">
+<!--
+                <div class="cpu-gpu-group">
+                    <div class="cpu-list">
+                        <div class="cpu" v-for="(cpu,index) in item.cpu" :key="index">
+                            <div class="tag">CPU</div>
+                            <div class="fire">
+                                <div v-if="cpu.fire.rate">
+                                    <span class="text-big">{{cpu.fire.rate.toFixed(2)}}</span>
+                                </div>
+                                <span class="text-big">&nbsp;× {{cpu.fire.core}}</span>
+                            </div>
+                            <div class="ice" v-if="cpu.ice.core">
+                                <div v-if="cpu.ice.rate" >
+                                    <span class="text-big">{{cpu.ice.rate.toFixed(2)}}</span>
+                                </div>
+                                <span class="text-big">&nbsp;× {{cpu.ice.core}}</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="gpu-list">
+                        <div class="gpu" v-for="(gpu,index) in item.gpu" :key="index">
+                            <div class="tag">GPU</div>
+                            <div class="brand"><span>{{gpu.brand || '-'}}</span><span v-if="gpu.core"> × {{gpu.core}}</span></div>
+                            <div class="info" v-if="gpu.info">{{gpu.info}}</div>
+                        </div>
+                    </div>
+
+                </div>
+-->
+
+<!--                <div class="info-list">
+                    <div :class="['info-item',  {'invalid': !item.ai.rate}]">
+                        <div class="key">AI</div>
+                        <div class="value" v-if="item.ai.rate">× {{item.ai.core}} {{item.ai.rate}}</div>
+                    </div>
+                </div>-->
+
+                <div class="info-list">
+                    <div :class="['info-item', {'invalid': !item.chip}]">
+                        <div class="key">芯片</div>
+                        <div class="value">{{item.chip}} mm</div>
+                    </div>
+                    <div :class="['info-item', {'invalid': !item.bluetooth}]">
+                        <div class="key">蓝牙</div>
+                        <div class="value">{{item.bluetooth}}</div>
+                    </div>
+                    <div :class="['info-item', {'invalid': !item.controlMethod}]">
+                        <div class="key">操控方式</div>
+                        <div class="value" v-if="item.controlMethod">{{item.controlMethod}}</div>
+                    </div>
+                </div>
+
+                <div class="info-list">
+                    <div class="info-item">
+                        <div class="key">单耳机重量</div>
+                        <div class="value">{{item.weight}}</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="key">单耳机聆听时长</div>
+                        <div class="value">{{item.duration}}</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="key">单耳机电量</div>
+                        <div class="value">{{item.battery}}</div>
+                    </div>
+                </div>
+
+                <div class="info-list">
+                    <div class="info-item">
+                        <div class="key">充电盒重量</div>
+                        <div class="value">{{item.case.weight}}</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="key">充电盒聆听时长</div>
+                        <div class="value">{{item.case.duration}}</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="key">充电盒电量</div>
+                        <div class="value">{{item.case.battery}}</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="key">宽·高·厚</div>
+                        <div class="value">{{item.case.length}} × {{item.case.height}} × {{item.case.width}}</div>
+                    </div>
+                </div>
+
+                <div class="info-list">
+                    <div :class="['info-item', {'invalid': !item.osLast}]">
+                        <div class="key">最终系统</div>
+                        <div class="value">{{item.osLast}}</div>
+                    </div>
+                    <div :class="['info-item', {'invalid': !item.models.length > 0}]">
+                        <div class="key">型号</div>
+                        <div class="value">{{item.models.toString()}}</div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!--设备列表-->
+            <div class="device">
+                <div class="device-title">运行设备</div>
+                <div class="device-list">
+                    <div class="device-item" v-for="(device, index) in item.devices" :key="'device' + index">{{device}}</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="gap"></div>
+    </div>
+
+    <!--进入全屏按钮-->
+    <div v-if="showFullScreenBtn"
+         v-show="!didEnteredFullScreen"
+         class="full-screen full-screen-btn"
+         @click="enterFullScreen">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAF4AAABeCAYAAACq0qNuAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAXqADAAQAAAABAAAAXgAAAADsPCiCAAABm0lEQVR4Ae3cQWoCARQD0Np7CT16wYO129lMdpnI+FwJnyb2NYuC6OPrpo/n8+fvnX+173d+cXd+beBHf13w4EcCo1qLH8E/Rr0fU3v235XFjyYAHvxIYFRr8eBHAqNaiwc/EhjVWjz4kcCo1uLBjwRGtRYPfiQwqrV48COBUa3Fgx8JjGotHvxIYFRr8eBHAqNaiwc/EhjVWjz4kcCo1uLBjwRGtRYPfiQwqrV48COBUa3Fgx8JqCVAgAABAgQIECBAgAABAgQIECBAgMBHCTzOvk/l9fr1XTbFKXgjpIibosEnneINfBE3RYNPOsUb+CJuigafdIo38EXcFA0+6RRv4Iu4KRp80inewBdxUzT4pFO8gS/ipmjwSad4A1/ETdHgk07xBr6Im6LBJ53iDXwRN0WDTzrFG/gibooGn3SKN/BF3BQNPukUb+CLuCkafNIp3sAXcVM0+KRTvIEv4qZo8EmneANfxE3R4JNO8Qa+iJuiTz8Rkn7oyttdP5li8Veu6NAF/oBx5VPwV2ofusAfMK58Cv5K7UPXPznoDA8I21eUAAAAAElFTkSuQmCC" alt="fullscreen-button" title="进入全屏模式">
+    </div>
+    <!--TIPS-->
+    <p v-show="didEnteredFullScreen" class="full-screen full-screen-tip">Esc 退出全屏模式</p>
+</div>
+
+
+<script src="airpods.js?v=20220123230122"></script>
+
+<script>
+    setTimeout(() => {
+        if (!/^http:\/\/(a\.kylebing\.cn|localhost|192\.168\.\d{1,3}\.\d{1,3})/i.test(location.href)) {
+            let hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?424010581994075b8b6b5ecc2d972de6";
+            let s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        }
+    }, 1000)
+</script>
+
+</body>
+</html>

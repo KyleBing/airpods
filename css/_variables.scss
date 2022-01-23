@@ -1,0 +1,47 @@
+// Colors
+$green          : #4CD964;
+$cyan           : #5AC8FA;
+$blue           : #007AFF;
+$purple         : #5856D6;
+$magenta        : #FF2D70;
+$red            : #FF3B30;
+$orange         : #FF9500;
+$yellow         : #FFCC00;
+$gray           : #8E8E93;
+
+$text-info-invalid: #d2d2d2;
+$text-info: #6f6f6f;
+$text-info-comment: #aaaaaa;
+$text-main: #202122;
+$text-title: #3D3D40;
+$text-copyright: #979797;
+
+$color-border: #d7d7d7;
+$color-border-light: #EDEDED;
+$color-border-cpu: #e7e7e7;
+
+$bg-card: #F7F7F7;
+$bg: #EDEDED;
+
+$fz-info: 10px;
+$fz: 13px;
+$fz-title: 15px;
+
+
+
+
+$timer: 10px;
+@for $item from 1 through 8 {
+  .mt-#{$item}{ margin-top:     $timer * $item !important;}
+  .mb-#{$item}{ margin-bottom:  $timer * $item !important;}
+  .ml-#{$item}{ margin-left:    $timer * $item !important;}
+  .mr-#{$item}{ margin-right:   $timer * $item !important;}
+   .m-#{$item}{ margin:         $timer * $item !important;}
+
+  .pt-#{$item}{ padding-top:    $timer * $item !important;}
+  .pb-#{$item}{ padding-bottom: $timer * $item !important;}
+  .pl-#{$item}{ padding-left:   $timer * $item !important;}
+  .pr-#{$item}{ padding-right:  $timer * $item !important;}
+   .p-#{$item}{ padding:        $timer * $item !important;}
+
+}
