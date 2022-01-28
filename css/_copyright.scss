@@ -4,14 +4,15 @@
   justify-content: space-between;
   flex-flow: column nowrap;
   flex-shrink: 0;
-  padding: 60px 40px ;
+  width: 300px;
+  padding: 60px 20px;
   .title{
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
     img{
-      width: 95px;
-      height: 95px;
+      width: 100px;
+      height: 100px;
       margin-bottom: 30px;
     }
     h1{

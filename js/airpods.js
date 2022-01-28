@@ -109,6 +109,7 @@ const AirPods = [
       duration: 4.5, // 单次聆听时长
       controlMethod: '按压耳机柄', // 操控方式
       models: [
+         'A2084'
       ],
       battery: 93, // mwh
       case: {
@@ -127,7 +128,7 @@ const AirPods = [
    },
    {
       name: 'AirPods Max',
-      dateInit: '2021.12.15',
+      dateInit: '2020.12.15',
       dateEnd: '',
       osLast: '4C165',
       chip: 'Apple H1',
@@ -197,7 +198,7 @@ let app = new Vue({
       relocate(){
          this.heightApp = 0
          this.$nextTick().then(() => {
-            let heightChip = document.querySelector('.chip').offsetHeight + 40
+            let heightChip = document.querySelector('.airpods').offsetHeight + 40
             console.log(heightChip)
             if (heightChip < innerHeight) { // .card 高度小于屏幕高度时
                document.querySelector('.card-container').style.position = 'fixed'
@@ -234,7 +235,7 @@ let app = new Vue({
 })
 
 window.onresize = () => {
-   let heightChip = document.querySelector('.chip').offsetHeight + 40
+   let heightChip = document.querySelector('.airpods').offsetHeight + 40
    if (heightChip < innerHeight) { // pc
       app.heightApp = innerHeight
    }

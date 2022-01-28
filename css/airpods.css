@@ -473,7 +473,8 @@ tt {
   justify-content: space-between;
   flex-flow: column nowrap;
   flex-shrink: 0;
-  padding: 60px 40px;
+  width: 300px;
+  padding: 60px 20px;
 }
 .copyright .title {
   display: flex;
@@ -481,8 +482,8 @@ tt {
   align-items: center;
 }
 .copyright .title img {
-  width: 95px;
-  height: 95px;
+  width: 100px;
+  height: 100px;
   margin-bottom: 30px;
 }
 .copyright .title h1 {
@@ -539,7 +540,7 @@ a.link:active {
   width: 100%;
 }
 
-.chip {
+.airpods {
   background-color: #F7F7F7;
   flex-shrink: 0;
   margin-right: 30px;
@@ -549,35 +550,36 @@ a.link:active {
   -moz-box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.1);
   box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.1);
 }
-.chip-img {
+.airpods-img {
+  background-color: white;
   padding: 30px;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 180px;
 }
-.chip-img img {
+.airpods-img img {
+  width: 130px;
+  height: 130px;
   display: block;
-  height: 100%;
 }
-.chip-name {
+.airpods-name {
   padding: 10px;
   text-align: center;
   background-color: white;
   border-bottom: 1px solid #EDEDED;
   border-top: 1px solid #EDEDED;
 }
-.chip-name h2 {
+.airpods-name h2 {
   color: black;
   font-weight: normal;
   font-family: "LLPixel", sans-serif;
   margin-bottom: 5px;
 }
-.chip-name p {
+.airpods-name p {
   color: #6f6f6f;
   font-family: "PrestigeEliteStd", sans-serif;
 }
-.chip .title {
+.airpods .title {
   text-align: center;
   font-size: 2rem;
 }
@@ -652,6 +654,7 @@ a.link:active {
 }
 
 .device-title {
+  font-size: 0.9rem;
   background-color: white;
   text-align: center;
   padding: 10px 0;

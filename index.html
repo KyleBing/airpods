@@ -7,8 +7,8 @@
     <meta name='keywords' content="苹果耳机参数对比,AirPods, AirPods Pro">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/airpods.css?v=20220123230122">
-    <link rel="shortcut icon" href="imgs/logo_black.png" type="image/png">
-    <link rel="apple-touch-icon" href="imgs/logo_black.png">
+    <link rel="shortcut icon" href="imgs/favicon.png" type="image/png">
+    <link rel="apple-touch-icon" href="imgs/logo.png">
     <script src="./js/vue_2.66.js"></script>
     <script src="./js/moment.min.js"></script>
     <style>
@@ -24,38 +24,44 @@
 
             <div>
                 <div class="title mb-6">
-<!--                   <img :src="`./imgs/logo/${model}.png`" alt="Apple Chip LOGO">-->
-                    <img src="./imgs/airpods.svg" alt="Apple Chip LOGO">
-                    <h1>苹果 AirPods 参数大全</h1>
+                    <img src="./imgs/logo.png" alt="AirPods LOGO">
+                    <h1>AirPods 参数大全</h1>
                 </div>
             </div>
 
 
             <div class="author">
-                <p><a class="link" target="_blank" href="https://en.wikipedia.org/wiki/Apple-designed_processors">wikipedia</a> ·
+                <p>
+                    <a class="link" target="_blank" href="https://en.wikipedia.org/wiki/Airpods">wikipedia</a> ·
                     <a class="link" href="https://kylebing.cn">kylebing</a>
                 </p>
                 <p>
                     <a class="link" href="https://kylebing.cn/tools/iphone">iPhone 参数</a> ·
                     <a class="link" href="https://kylebing.cn/tools/ipad">iPad 参数</a>
                 </p>
+                <p>
+                    <a class="link" href="https://kylebing.cn/tools/apple-chip">苹果芯片参数</a>
+                </p>
                 <p>·</p>
                 <p>
-                    <span>2020.06.05</span> ~
-                    <span>2022.01.23</span>
+                    <span>2022.01.28</span> ~
+                    <span>2022.01.28</span>
                 </p>
             </div>
         </div>
 
         <!-- CHIP LIST -->
-        <div class="chip" v-for="(item, index) in AirPods" :key="`item.name-${index}`">
-            <div class="chip-img">
+        <div class="airpods" v-for="(item, index) in AirPods" :key="`item.name-${index}`">
+            <div class="airpods-img">
+<!--                <img onerror="this.src = './imgs/airpods/airpods.svg'"-->
+<!--                     :src="`./imgs/airpods/${item.name.replace(' ', '_')}.svg`"-->
+<!--                     :alt="item.name">-->
                 <img onerror="this.src = './imgs/airpods/airpods.svg'"
-                     :src="`./imgs/airpods/${item.name.replace(' ', '_')}.svg`"
+                     :src="`./imgs/real/${item.name.replace(' ', '_')}.jpg`"
                      :alt="item.name">
             </div>
 
-            <div class="chip-name">
+            <div class="airpods-name">
                 <h2>{{item.name}}</h2>
                 <p>
                     <span>{{item.dateInit || '-'}}</span>
@@ -74,11 +80,7 @@
                     </div>
                 </div>
 
-                <div class="info-list">
-                    <div :class="['info-item', {'invalid': !item.chip}]">
-                        <div class="key">芯片</div>
-                        <div class="value">{{item.chip}}</div>
-                    </div>
+                <div class="info-list mt-2">
                     <div :class="['info-item', {'invalid': !item.bluetooth}]">
                         <div class="key">蓝牙</div>
                         <div class="value">{{item.bluetooth}}</div>
