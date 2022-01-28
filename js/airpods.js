@@ -21,10 +21,10 @@ const AirPods = [
          'A1523',
          'A1722'
       ],
-      battery: '93mwh',
+      battery: 93, // mwh
       case: {
          weight: 38,
-         battery: '1.52wh',
+         battery: 1.52, // wh
          duration: 24, // 盒子聆听时长
          width: 21.3,
          height: 53.5,
@@ -50,11 +50,11 @@ const AirPods = [
          'A2032',
          'A2031'
       ],
-      battery: '93mwh',
+      battery: 93, // mwh
       case: {
          weight: 38,
          duration: 24, // 盒子聆听时长
-         battery: '1.52wh',
+         battery: 1.52, // wh
          width: 21.3,
          height: 53.5,
          length: 44.3
@@ -80,11 +80,11 @@ const AirPods = [
          'A2032',
          'A2031'
       ],
-      battery: '93mwh',
+      battery: 93, // mwh
       case: {
          weight: 38,
          duration: 30, // 盒子聆听时长
-         battery: '1.52wh',
+         battery: 1.52, // wh
          width: 21.3,
          height: 53.5,
          length: 44.3
@@ -110,7 +110,7 @@ const AirPods = [
       controlMethod: '按压耳机柄', // 操控方式
       models: [
       ],
-      battery: '93mwh',
+      battery: 93, // mwh
       case: {
          weight: 45.6,
          duration: 24, // 盒子聆听时长
@@ -142,7 +142,6 @@ const AirPods = [
       ],
       battery: '',
       case: {
-         duration: 0, // 盒子聆听时长
          weight: 134.8,
          battery: '',
          width: 83.4,
@@ -171,51 +170,61 @@ let app = new Vue({
    },
    mounted(){
       // 全屏相关
-      let chromeCore = /Chrome/i.test(navigator.userAgent);
-      let mobileMode = /Mobile/i.test(navigator.userAgent);
-      this.portraitMode = window.innerWidth > window.innerHeight;
-      this.mobileMode = mobileMode;
-      this.showFullScreenBtn = chromeCore && !mobileMode;
+      let chromeCore = /Chrome/i.test(navigator.userAgent)
+      let mobileMode = /Mobile/i.test(navigator.userAgent)
+      this.portraitMode = window.innerWidth > window.innerHeight
+      this.mobileMode = mobileMode
+      this.showFullScreenBtn = chromeCore && !mobileMode
       this.relocate(); // relocate items
+      this.addDateDuration()
    },
 
    watch: {
       model() {
-         this.relocate();
+         this.relocate()
       }
    },
    methods: {
       // 全屏显示
       enterFullScreen(){
-         document.documentElement.requestFullscreen().then();
+         document.documentElement.requestFullscreen().then()
+      },
+      addDateDuration(){
+         this.AirPods.forEach(item => {
+            item.dateDuration = new moment().from(new moment(item.dateInit))
+         })
       },
       relocate(){
-         this.heightApp = 0;
+         this.heightApp = 0
          this.$nextTick().then(() => {
-            let heightChip = document.querySelector('.chip').offsetHeight + 40;
+            let heightChip = document.querySelector('.chip').offsetHeight + 40
             console.log(heightChip)
             if (heightChip < innerHeight) { // .card 高度小于屏幕高度时
-               document.querySelector('.card-container').style.position = 'fixed';
-               this.heightApp = innerHeight;
+               document.querySelector('.card-container').style.position = 'fixed'
+               this.heightApp = innerHeight
                // pc
                if (!this.mobileMode){
                   document.querySelector('#app').style.height = innerHeight + 'px'
                   window.onwheel = event => {
-                     console.log(event.deltaY)
+                     // console.log(event.deltaY)
                      let container = document.querySelector('.card-container')
                      let scrollLeft = container.scrollLeft; // 文档左卷的高度
-                     let direction = event.deltaY > 0 ? 1 : -1
                      let scrollSpace = container.scrollWidth - window.innerWidth; // 横向滚动范围
-                     let afterScrollLeft = scrollLeft > scrollSpace?  scrollLeft: scrollLeft + 100 * direction
-                     // console.log(scrollLeft, afterScrollLeft)
-                     container.scrollTo(afterScrollLeft, 0);
+                     let afterScrollLeft
+                     if (event.deltaY > 0){
+                        afterScrollLeft = scrollLeft > scrollSpace?  scrollLeft: scrollLeft + 100
+                     } else {
+                        afterScrollLeft =  scrollLeft + 100 * -1
+                     }
+                     // console.log(scrollLeft,scrollSpace, afterScrollLeft)
+                     container.scrollTo(afterScrollLeft, 0)
                   }
                } else {
                   window.onscroll = null
                }
             } else {
-               document.querySelector('body').style.height = 'auto';
-               document.querySelector('.card-container').style.position = 'relative';
+               document.querySelector('body').style.height = 'auto'
+               document.querySelector('.card-container').style.position = 'relative'
                window.onscroll = null
 
             }
@@ -225,7 +234,7 @@ let app = new Vue({
 })
 
 window.onresize = () => {
-   let heightChip = document.querySelector('.chip').offsetHeight + 40;
+   let heightChip = document.querySelector('.chip').offsetHeight + 40
    if (heightChip < innerHeight) { // pc
       app.heightApp = innerHeight
    }

@@ -9,7 +9,8 @@
     <link rel="stylesheet" href="css/airpods.css?v=20220123230122">
     <link rel="shortcut icon" href="imgs/logo_black.png" type="image/png">
     <link rel="apple-touch-icon" href="imgs/logo_black.png">
-    <script src="../../lib/js/vue_2.66.js"></script>
+    <script src="./js/vue_2.66.js"></script>
+    <script src="./js/moment.min.js"></script>
     <style>
         [v-cloak]{
             display: none;
@@ -50,7 +51,7 @@
         <div class="chip" v-for="(item, index) in AirPods" :key="`item.name-${index}`">
             <div class="chip-img">
                 <img onerror="this.src = './imgs/airpods/airpods.svg'"
-                     :src="`./imgs/airpods/${item.name}.svg`"
+                     :src="`./imgs/airpods/${item.name.replace(' ', '_')}.svg`"
                      :alt="item.name">
             </div>
 
@@ -60,46 +61,18 @@
                     <span>{{item.dateInit || '-'}}</span>
 <!--                    <span> ~ {{item.dateEnd}}</span>-->
                 </p>
+                <p>{{item.dateDuration}}</p>
             </div>
 
             <div class="info-list-group">
-<!--
                 <div class="cpu-gpu-group">
-                    <div class="cpu-list">
-                        <div class="cpu" v-for="(cpu,index) in item.cpu" :key="index">
-                            <div class="tag">CPU</div>
-                            <div class="fire">
-                                <div v-if="cpu.fire.rate">
-                                    <span class="text-big">{{cpu.fire.rate.toFixed(2)}}</span>
-                                </div>
-                                <span class="text-big">&nbsp;× {{cpu.fire.core}}</span>
-                            </div>
-                            <div class="ice" v-if="cpu.ice.core">
-                                <div v-if="cpu.ice.rate" >
-                                    <span class="text-big">{{cpu.ice.rate.toFixed(2)}}</span>
-                                </div>
-                                <span class="text-big">&nbsp;× {{cpu.ice.core}}</span>
-                            </div>
-                        </div>
-                    </div>
-
                     <div class="gpu-list">
-                        <div class="gpu" v-for="(gpu,index) in item.gpu" :key="index">
-                            <div class="tag">GPU</div>
-                            <div class="brand"><span>{{gpu.brand || '-'}}</span><span v-if="gpu.core"> × {{gpu.core}}</span></div>
-                            <div class="info" v-if="gpu.info">{{gpu.info}}</div>
+                        <div class="gpu">
+                            <div class="tag">CHIP</div>
+                            <div class="brand"><span>{{item.chip || '-'}}</span></div>
                         </div>
                     </div>
-
                 </div>
--->
-
-<!--                <div class="info-list">
-                    <div :class="['info-item',  {'invalid': !item.ai.rate}]">
-                        <div class="key">AI</div>
-                        <div class="value" v-if="item.ai.rate">× {{item.ai.core}} {{item.ai.rate}}</div>
-                    </div>
-                </div>-->
 
                 <div class="info-list">
                     <div :class="['info-item', {'invalid': !item.chip}]">
@@ -115,41 +88,54 @@
                         <div class="value" v-if="item.controlMethod">{{item.controlMethod}}</div>
                     </div>
                 </div>
+            </div>
 
+            <div class="device">
+                <div class="device-title">耳机</div>
+            </div>
+
+            <div class="info-list-group">
                 <div class="info-list">
                     <div class="info-item">
                         <div class="key">单耳机重量</div>
-                        <div class="value">{{item.weight}} g</div>
+                        <div class="value">{{item.weight}}<span class="unit">g</span></div>
                     </div>
                     <div class="info-item">
                         <div class="key">单耳机聆听时长</div>
-                        <div class="value">{{item.duration}} 小时</div>
+                        <div class="value">{{item.duration}}<span class="unit">小时</span></div>
                     </div>
-                    <div class="info-item">
+                    <div :class="['info-item', {'invalid': !item.battery}]">
                         <div class="key">单耳机电量</div>
-                        <div class="value">{{item.battery}}</div>
+                        <div class="value">{{item.battery || '--'}}<span class="unit">mwh</span></div>
                     </div>
                 </div>
+            </div>
 
+            <div class="device-title">盒子</div>
+
+
+            <div class="info-list-group">
                 <div class="info-list">
                     <div class="info-item">
                         <div class="key">充电盒重量</div>
-                        <div class="value">{{item.case.weight}} g</div>
+                        <div class="value">{{item.case.weight}}<span class="unit">g</span></div>
                     </div>
-                    <div class="info-item">
+                    <div :class="['info-item', {'invalid': !item.case.duration}]">
                         <div class="key">充电盒聆听时长</div>
-                        <div class="value">{{item.case.duration}} 小时</div>
+                        <div class="value">{{item.case.duration}}<span class="unit">小时</span></div>
                     </div>
-                    <div class="info-item">
+                    <div :class="['info-item', {'invalid': !item.case.battery}]">
                         <div class="key">充电盒电量</div>
-                        <div class="value">{{item.case.battery}}</div>
+                        <div class="value">{{item.case.battery}}<span class="unit">wh</span></div>
                     </div>
                     <div class="info-item">
                         <div class="key">宽·高·厚</div>
-                        <div class="value">{{item.case.length}} × {{item.case.height}} × {{item.case.width}} mm</div>
+                        <div class="value">{{item.case.length}} × {{item.case.height}} × {{item.case.width}}<span class="unit">mm</span></div>
                     </div>
                 </div>
+            </div>
 
+            <div class="info-list-group">
                 <div class="info-list">
                     <div :class="['info-item', {'invalid': !item.osLast}]">
                         <div class="key">最终系统</div>
@@ -157,19 +143,11 @@
                     </div>
                     <div :class="['info-item', {'invalid': !item.models.length > 0}]">
                         <div class="key">型号</div>
-                        <div class="value">{{item.models.toString()}}</div>
+                        <div class="value">{{item.models.join(', ')}}</div>
                     </div>
                 </div>
             </div>
 
-
-            <!--设备列表-->
-            <div class="device">
-                <div class="device-title">运行设备</div>
-                <div class="device-list">
-                    <div class="device-item" v-for="(device, index) in item.devices" :key="'device' + index">{{device}}</div>
-                </div>
-            </div>
         </div>
 
         <div class="gap"></div>
@@ -187,7 +165,7 @@
 </div>
 
 
-<script src="airpods.js?v=20220123230122"></script>
+<script src="js/airpods.js?v=20220123230122"></script>
 
 <script>
     setTimeout(() => {

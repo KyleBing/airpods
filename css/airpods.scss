@@ -149,6 +149,11 @@ a.link{
       letter-spacing: 0.5px;
       font-family: 'PTSans', sans-serif;
     }
+    .unit{
+      margin-left: 3px;
+      font-size: 0.7rem;
+      font-weight: normal;
+    }
     @if $show-value-dash {
       &::after{
         z-index: 1;

@@ -636,6 +636,11 @@ a.link:active {
   letter-spacing: 0.5px;
   font-family: "PTSans", sans-serif;
 }
+.info-list .info-item .unit {
+  margin-left: 3px;
+  font-size: 0.7rem;
+  font-weight: normal;
+}
 .info-list .info-item::after {
   z-index: 1;
   content: "";
