@@ -104,7 +104,7 @@
                 <div class="info-list">
                     <div :class="['info-item', {'invalid': !item.chip}]">
                         <div class="key">芯片</div>
-                        <div class="value">{{item.chip}} mm</div>
+                        <div class="value">{{item.chip}}</div>
                     </div>
                     <div :class="['info-item', {'invalid': !item.bluetooth}]">
                         <div class="key">蓝牙</div>
@@ -119,11 +119,11 @@
                 <div class="info-list">
                     <div class="info-item">
                         <div class="key">单耳机重量</div>
-                        <div class="value">{{item.weight}}</div>
+                        <div class="value">{{item.weight}} g</div>
                     </div>
                     <div class="info-item">
                         <div class="key">单耳机聆听时长</div>
-                        <div class="value">{{item.duration}}</div>
+                        <div class="value">{{item.duration}} 小时</div>
                     </div>
                     <div class="info-item">
                         <div class="key">单耳机电量</div>
@@ -134,11 +134,11 @@
                 <div class="info-list">
                     <div class="info-item">
                         <div class="key">充电盒重量</div>
-                        <div class="value">{{item.case.weight}}</div>
+                        <div class="value">{{item.case.weight}} g</div>
                     </div>
                     <div class="info-item">
                         <div class="key">充电盒聆听时长</div>
-                        <div class="value">{{item.case.duration}}</div>
+                        <div class="value">{{item.case.duration}} 小时</div>
                     </div>
                     <div class="info-item">
                         <div class="key">充电盒电量</div>
@@ -146,7 +146,7 @@
                     </div>
                     <div class="info-item">
                         <div class="key">宽·高·厚</div>
-                        <div class="value">{{item.case.length}} × {{item.case.height}} × {{item.case.width}}</div>
+                        <div class="value">{{item.case.length}} × {{item.case.height}} × {{item.case.width}} mm</div>
                     </div>
                 </div>
 

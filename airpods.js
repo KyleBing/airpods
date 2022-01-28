@@ -5,15 +5,16 @@
 
 const AirPods = [
    {
-      name: 'AirPods1',
+      name: 'AirPods 1',
       dateInit: '2016.12.13',
       dateEnd: '2019.03.20',
       osLast: '6.8.8',
       chip: 'Apple W1 SoC',
+      noise_reduction: false, // 降噪
       bluetooth: '4.2',
       associatedOs: 'iOS 10',
-      weight: '4g', // 单支耳机重量
-      duration: '5h', // 单次聆听时长
+      weight: 4, // 单支耳机重量
+      duration: 5, // 单次聆听时长
       wirelessCharge: '',
       controlMethod: '敲击耳机', // 操控方式
       models: [
@@ -22,25 +23,28 @@ const AirPods = [
       ],
       battery: '93mwh',
       case: {
-         weight: '38g',
+         weight: 38,
          battery: '1.52wh',
-         duration: '24h', // 盒子聆听时长
+         duration: 24, // 盒子聆听时长
          width: 21.3,
          height: 53.5,
          length: 44.3
-      }
+      },
+      chargeMethods: [
+         '闪电',
+      ]
    },
    {
-      name: 'AirPods2',
+      name: 'AirPods 2',
       dateInit: '2019.03.20',
       dateEnd: '',
       osLast: '4C165',
       chip: 'Apple H1',
+      noise_reduction: false, // 降噪
       bluetooth: '5.0',
       associatedOs: 'iOS 12.2',
-      weight: '4g', // 单支耳机重量
-      duration: '5h', // 单次聆听时长
-      wirelessCharge: 'Qi',
+      weight: 4, // 单支耳机重量
+      duration: 5, // 单次聆听时长
       controlMethod: '敲击耳机', // 操控方式
       models: [
          'A2032',
@@ -48,26 +52,29 @@ const AirPods = [
       ],
       battery: '93mwh',
       case: {
-         weight: '38g',
-         duration: '24h', // 盒子聆听时长
+         weight: 38,
+         duration: 24, // 盒子聆听时长
          battery: '1.52wh',
          width: 21.3,
          height: 53.5,
          length: 44.3
-      }
+      },
+      chargeMethods: [
+         '闪电',
+      ]
    },
    {
-      name: 'AirPods3',
+      name: 'AirPods 3',
       dateInit: '2021.10.26',
       dateEnd: '',
       osLast: '4C165',
       chip: 'Apple H1',
+      noise_reduction: false, // 降噪
       bluetooth: '5.0',
       associatedOs: 'iOS 13',
-      weight: '4g', // 单支耳机重量
+      weight: 4, // 单支耳机重量
 
-      duration: '6h', // 单次聆听时长
-      wirelessCharge: 'Qi',
+      duration: 6, // 单次聆听时长
       controlMethod: '按压耳机柄', // 操控方式
       models: [
          'A2032',
@@ -75,13 +82,76 @@ const AirPods = [
       ],
       battery: '93mwh',
       case: {
-         weight: '38g',
-         duration: '30h', // 盒子聆听时长
+         weight: 38,
+         duration: 30, // 盒子聆听时长
          battery: '1.52wh',
          width: 21.3,
          height: 53.5,
          length: 44.3
-      }
+      },
+      chargeMethods: [
+         '闪电',
+         '无线 Qi',
+         'MagSafe'
+      ]
+   },
+   {
+      name: 'AirPods Pro',
+      dateInit: '2019.10.30',
+      dateEnd: '',
+      osLast: '4C165',
+      chip: 'Apple H1',
+      noise_reduction: true, // 降噪
+      bluetooth: '5.0',
+      associatedOs: 'iOS 13',
+      weight: 4, // 单支耳机重量
+
+      duration: 4.5, // 单次聆听时长
+      controlMethod: '按压耳机柄', // 操控方式
+      models: [
+      ],
+      battery: '93mwh',
+      case: {
+         weight: 45.6,
+         duration: 24, // 盒子聆听时长
+         battery: '',
+         width: 21.7,
+         height: 45.2,
+         length: 60.6
+      },
+      chargeMethods: [
+         '闪电',
+         '无线 Qi',
+         'MagSafe'
+      ]
+   },
+   {
+      name: 'AirPods Max',
+      dateInit: '2021.12.15',
+      dateEnd: '',
+      osLast: '4C165',
+      chip: 'Apple H1',
+      noise_reduction: true, // 降噪
+      bluetooth: '5.0',
+      associatedOs: 'iOS 14.3',
+      weight: 384.8, // 单支耳机重量
+
+      duration: 20, // 单次聆听时长
+      controlMethod: '按键', // 操控方式
+      models: [
+      ],
+      battery: '',
+      case: {
+         duration: 0, // 盒子聆听时长
+         weight: 134.8,
+         battery: '',
+         width: 83.4,
+         height: 168.6,
+         length: 187.3
+      },
+      chargeMethods: [
+         '闪电',
+      ]
    },
 
 ]
