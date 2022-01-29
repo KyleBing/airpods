@@ -6,7 +6,7 @@
     <meta name='description' content="苹果耳机参数对比,AirPods, AirPods Pro">
     <meta name='keywords' content="苹果耳机参数对比,AirPods, AirPods Pro">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/airpods.css?v=20220123230122">
+    <link rel="stylesheet" href="css/airpods.css?v=20220130000734">
     <link rel="shortcut icon" href="imgs/favicon.png" type="image/png">
     <link rel="apple-touch-icon" href="imgs/logo.png">
     <script src="./js/vue_2.66.js"></script>
@@ -35,17 +35,21 @@
                     <a class="link" target="_blank" href="https://en.wikipedia.org/wiki/Airpods">wikipedia</a> ·
                     <a class="link" href="https://kylebing.cn">kylebing</a>
                 </p>
+                <p>·</p>
+
                 <p>
-                    <a class="link" href="https://kylebing.cn/tools/iphone">iPhone 参数</a> ·
-                    <a class="link" href="https://kylebing.cn/tools/ipad">iPad 参数</a>
+                    <a class="link" href="https://kylebing.cn/tools/iphone">iPhone</a>
                 </p>
                 <p>
-                    <a class="link" href="https://kylebing.cn/tools/apple-chip">苹果芯片参数</a>
+                    <a class="link" href="https://kylebing.cn/tools/ipad">iPad</a>
+                </p>
+                <p>
+                    <a class="link" href="https://kylebing.cn/tools/apple-chip">Chip</a>
                 </p>
                 <p>·</p>
                 <p>
                     <span>2022.01.28</span> ~
-                    <span>2022.01.28</span>
+                    <span>2022.01.29</span>
                 </p>
             </div>
         </div>
@@ -64,23 +68,27 @@
             <div class="airpods-name">
                 <h2>{{item.name}}</h2>
                 <p>
-                    <span>{{item.dateInit || '-'}}</span>
+                    <span>{{item.dateInit.replaceAll('-', '.') || '-'}}</span>
 <!--                    <span> ~ {{item.dateEnd}}</span>-->
                 </p>
                 <p>{{item.dateDuration}}</p>
             </div>
 
             <div class="info-list-group">
-                <div class="cpu-gpu-group">
+<!--                <div class="cpu-gpu-group">
                     <div class="gpu-list">
                         <div class="gpu">
                             <div class="tag">CHIP</div>
                             <div class="brand"><span>{{item.chip || '-'}}</span></div>
                         </div>
                     </div>
-                </div>
+                </div>-->
 
-                <div class="info-list mt-2">
+                <div class="info-list">
+                    <div :class="['info-item', {'invalid': !item.chip}]">
+                        <div class="key">芯片</div>
+                        <div class="value">{{item.chip}}</div>
+                    </div>
                     <div :class="['info-item', {'invalid': !item.bluetooth}]">
                         <div class="key">蓝牙</div>
                         <div class="value">{{item.bluetooth}}</div>
@@ -113,7 +121,7 @@
                 </div>
             </div>
 
-            <div class="device-title">盒子</div>
+            <div class="device-title">充电盒</div>
 
 
             <div class="info-list-group">
@@ -147,6 +155,10 @@
                         <div class="key">型号</div>
                         <div class="value">{{item.models.join(', ')}}</div>
                     </div>
+                    <div :class="['info-item', {'invalid': !item.chargeMethods.length > 0}]">
+                        <div class="key">充电方式</div>
+                        <div class="value">{{item.chargeMethods.join(', ')}}</div>
+                    </div>
                 </div>
             </div>
 
@@ -167,7 +179,7 @@
 </div>
 
 
-<script src="js/airpods.js?v=20220123230122"></script>
+<script src="js/airpods.js?v=20220130000734"></script>
 
 <script>
     setTimeout(() => {

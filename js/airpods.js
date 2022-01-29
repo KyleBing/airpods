@@ -6,8 +6,8 @@
 const AirPods = [
    {
       name: 'AirPods 1',
-      dateInit: '2016.12.13',
-      dateEnd: '2019.03.20',
+      dateInit: '2016-12-13',
+      dateEnd: '2019-03-20',
       osLast: '6.8.8',
       chip: 'Apple W1 SoC',
       noise_reduction: false, // 降噪
@@ -36,7 +36,7 @@ const AirPods = [
    },
    {
       name: 'AirPods 2',
-      dateInit: '2019.03.20',
+      dateInit: '2019-03-20',
       dateEnd: '',
       osLast: '4C165',
       chip: 'Apple H1',
@@ -65,7 +65,7 @@ const AirPods = [
    },
    {
       name: 'AirPods 3',
-      dateInit: '2021.10.26',
+      dateInit: '2021-10-26',
       dateEnd: '',
       osLast: '4C165',
       chip: 'Apple H1',
@@ -97,7 +97,7 @@ const AirPods = [
    },
    {
       name: 'AirPods Pro',
-      dateInit: '2019.10.30',
+      dateInit: '2019-10-30',
       dateEnd: '',
       osLast: '4C165',
       chip: 'Apple H1',
@@ -128,7 +128,7 @@ const AirPods = [
    },
    {
       name: 'AirPods Max',
-      dateInit: '2020.12.15',
+      dateInit: '2020-12-15',
       dateEnd: '',
       osLast: '4C165',
       chip: 'Apple H1',

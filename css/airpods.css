@@ -474,7 +474,7 @@ tt {
   flex-flow: column nowrap;
   flex-shrink: 0;
   width: 300px;
-  padding: 60px 20px;
+  padding: 100px 20px;
 }
 .copyright .title {
   display: flex;
@@ -541,6 +541,7 @@ a.link:active {
 }
 
 .airpods {
+  padding-bottom: 30px;
   background-color: #F7F7F7;
   flex-shrink: 0;
   margin-right: 30px;
@@ -558,8 +559,8 @@ a.link:active {
   align-items: center;
 }
 .airpods-img img {
-  width: 130px;
-  height: 130px;
+  width: 150px;
+  height: 150px;
   display: block;
 }
 .airpods-name {
@@ -576,6 +577,7 @@ a.link:active {
   margin-bottom: 5px;
 }
 .airpods-name p {
+  font-size: 13px;
   color: #6f6f6f;
   font-family: "PrestigeEliteStd", sans-serif;
 }
@@ -600,7 +602,7 @@ a.link:active {
   justify-content: space-between;
   align-items: flex-start;
   display: flex;
-  line-height: 1.8;
+  line-height: 2;
 }
 .info-list .info-item:hover:after {
   border-bottom-color: #202122;
@@ -657,7 +659,7 @@ a.link:active {
   font-size: 0.9rem;
   background-color: white;
   text-align: center;
-  padding: 10px 0;
+  padding: 8px 0;
   border-bottom: 1px solid #EDEDED;
   border-top: 1px solid #EDEDED;
 }

@@ -45,6 +45,7 @@ a.link{
 }
 
 .airpods{
+  padding-bottom: 30px;
   background-color: $bg-card;
   flex-shrink: 0;
   margin-right: 30px;
@@ -59,8 +60,8 @@ a.link{
     justify-content: center;
     align-items: center;
     img{
-      width: 130px;
-      height: 130px;
+      width: 150px;
+      height: 150px;
       display: block;
     }
   }
@@ -77,6 +78,7 @@ a.link{
       margin-bottom: 5px;
     }
     p{
+      font-size: $fz;
       color: $text-info;
       font-family: 'PrestigeEliteStd', sans-serif;
     }
@@ -101,7 +103,7 @@ a.link{
     justify-content: space-between;
     align-items: flex-start;
     display: flex;
-    line-height: 1.8;
+    line-height: 2;
     &:hover{
       &:after{
         border-bottom-color: $text-main;
@@ -173,7 +175,7 @@ a.link{
   font-size: 0.9rem;
   background-color: white;
   text-align: center;
-  padding: 10px 0;
+  padding: 8px 0;
   border-bottom: 1px solid $color-border-light;
   border-top: 1px solid $color-border-light;
 }
