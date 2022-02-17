@@ -960,13 +960,13 @@ a.link:active {
   }
   .airpods-name {
     border-color: #4d4d4d;
-    background-color: #474747;
+    background-color: #4d4d4d;
   }
   .airpods-name h2 {
-    color: #cccccc;
+    color: white;
   }
   .airpods-name p {
-    color: #8c8c8c;
+    color: #cccccc;
   }
 
   .info-list .info-item:hover:after {
@@ -996,7 +996,7 @@ a.link:active {
 
   .gpu-list .gpu, .gpu-list .cpu, .cpu-list .gpu, .cpu-list .cpu {
     color: white;
-    background-color: #474747;
+    background-color: #4d4d4d;
     border: 1px solid #4d4d4d;
   }
   .gpu-list .gpu .tag, .gpu-list .cpu .tag, .cpu-list .gpu .tag, .cpu-list .cpu .tag {
@@ -1022,12 +1022,12 @@ a.link:active {
 
   .device-title {
     color: #b3b3b3;
-    background-color: #474747;
+    background-color: #4d4d4d;
     border-color: #4d4d4d;
   }
 
   .device-list .device-item {
-    background-color: #474747;
+    background-color: #4d4d4d;
     border: 1px solid #4d4d4d;
     color: #b3b3b3;
   }
@@ -1055,6 +1055,7 @@ a.link:active {
   }
 
   ::-webkit-scrollbar-track {
+    border: none;
     background-color: rgba(0, 0, 0, 0);
   }
 

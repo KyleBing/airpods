@@ -1,5 +1,5 @@
 $dark-bg: lighten(black, 10%);
-$dark-bg-title: lighten(black, 28%);
+$dark-bg-title: lighten(black, 30%);
 $dark-bg-highlight: lighten(black, 25%);
 $dark-bg-card: lighten(black, 20%);
 $dark-bg-light: lighten(black, 18%);
@@ -38,10 +38,10 @@ $dark-border-light: lighten(black, 60%);
       border-color: $dark-border;
       background-color: $dark-bg-title;
       h2{
-        color: $dark-text-title;
+        color: white;
       }
       p{
-        color: $dark-text-subtitle;
+        color: $dark-text-title;
       }
     }
   }
@@ -169,6 +169,7 @@ $dark-border-light: lighten(black, 60%);
   }
 
   ::-webkit-scrollbar-track {
+    border: none;
     background-color: rgba(0, 0, 0, 0);
   }
 

@@ -6,7 +6,7 @@
     <meta name='description' content="苹果耳机参数对比,AirPods, AirPods Pro">
     <meta name='keywords' content="苹果耳机参数对比,AirPods, AirPods Pro">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="scss/airpods.css?v=20220216172517">
+    <link rel="stylesheet" href="scss/airpods.css?v=20220217093836">
     <link rel="shortcut icon" href="imgs/favicon.png" type="image/png">
     <link rel="apple-touch-icon" href="imgs/logo.png">
     <script src="./js/vue_2.66.js"></script>
@@ -67,7 +67,7 @@
 
             <div class="airpods-name">
                 <h2>{{item.name}}</h2>
-                <p>
+                <p class="date">
                     <span>{{item.dateInit.replaceAll('-', '.') || '-'}}</span>
 <!--                    <span> ~ {{item.dateEnd}}</span>-->
                 </p>
@@ -75,15 +75,6 @@
             </div>
 
             <div class="info-list-group">
-<!--                <div class="cpu-gpu-group">
-                    <div class="gpu-list">
-                        <div class="gpu">
-                            <div class="tag">CHIP</div>
-                            <div class="brand"><span>{{item.chip || '-'}}</span></div>
-                        </div>
-                    </div>
-                </div>-->
-
                 <div class="info-list">
                     <div :class="['info-item', {'invalid': !item.chip}]">
                         <div class="key">芯片</div>
@@ -112,11 +103,11 @@
                     </div>
                     <div class="info-item">
                         <div class="key">单耳机聆听时长</div>
-                        <div class="value">{{item.duration}}<span class="unit">小时</span></div>
+                        <div class="value">{{item.duration}}<span v-if="item.duration" class="unit">小时</span></div>
                     </div>
                     <div :class="['info-item', {'invalid': !item.battery}]">
                         <div class="key">单耳机电量</div>
-                        <div class="value">{{item.battery || '--'}}<span class="unit">mwh</span></div>
+                        <div class="value">{{item.battery || '--'}}<span v-if="item.battery" class="unit">mwh</span></div>
                     </div>
                 </div>
             </div>
@@ -132,11 +123,11 @@
                     </div>
                     <div :class="['info-item', {'invalid': !item.case.duration}]">
                         <div class="key">充电盒聆听时长</div>
-                        <div class="value">{{item.case.duration}}<span class="unit">小时</span></div>
+                        <div class="value">{{item.case.duration}}<span v-if="item.case.duration" class="unit">小时</span></div>
                     </div>
                     <div :class="['info-item', {'invalid': !item.case.battery}]">
                         <div class="key">充电盒电量</div>
-                        <div class="value">{{item.case.battery}}<span class="unit">wh</span></div>
+                        <div class="value">{{item.case.battery}}<span v-if="item.case.battery" class="unit">wh</span></div>
                     </div>
                     <div class="info-item">
                         <div class="key">宽·高·厚</div>
@@ -145,6 +136,7 @@
                 </div>
             </div>
 
+            <div class="device-title">其它</div>
             <div class="info-list-group">
                 <div class="info-list">
                     <div :class="['info-item', {'invalid': !item.osLast}]">
@@ -179,7 +171,7 @@
 </div>
 
 
-<script src="js/airpods.js?v=20220216172517"></script>
+<script src="js/airpods.js?v=20220217093836"></script>
 
 <script>
     setTimeout(() => {
