@@ -494,7 +494,7 @@ tt {
 
 .author {
   text-align: center;
-  color: #979797;
+  color: #7c7c7c;
   letter-spacing: 0.3px;
   line-height: 1.4;
   font-size: 0.7rem;
@@ -1045,7 +1045,7 @@ a.link:active {
   }
 
   .author {
-    color: #979797;
+    color: #8c8c8c;
   }
 
   ::-webkit-scrollbar {

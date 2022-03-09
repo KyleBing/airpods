@@ -167,7 +167,7 @@ let app = new Vue({
       mobileMode: false,
       heightApp: 0,
       inMobile: false,
-      AirPods: AirPods
+      AirPods: AirPods.reverse()
    },
    mounted(){
       // 全屏相关
