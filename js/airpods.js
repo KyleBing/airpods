@@ -63,38 +63,7 @@ const AirPods = [
          '闪电',
       ]
    },
-   {
-      name: 'AirPods 3',
-      dateInit: '2021-10-26',
-      dateEnd: '',
-      osLast: '4C165',
-      chip: 'Apple H1',
-      noise_reduction: false, // 降噪
-      bluetooth: '5.0',
-      associatedOs: 'iOS 13',
-      weight: 4, // 单支耳机重量
 
-      duration: 6, // 单次聆听时长
-      controlMethod: '按压耳机柄', // 操控方式
-      models: [
-         'A2032',
-         'A2031'
-      ],
-      battery: 93, // mwh
-      case: {
-         weight: 38,
-         duration: 30, // 盒子聆听时长
-         battery: 1.52, // wh
-         width: 21.3,
-         height: 53.5,
-         length: 44.3
-      },
-      chargeMethods: [
-         '闪电',
-         '无线 Qi',
-         'MagSafe'
-      ]
-   },
    {
       name: 'AirPods Pro',
       dateInit: '2019-10-30',
@@ -151,6 +120,38 @@ const AirPods = [
       },
       chargeMethods: [
          '闪电',
+      ]
+   },
+   {
+      name: 'AirPods 3',
+      dateInit: '2021-10-26',
+      dateEnd: '',
+      osLast: '4C165',
+      chip: 'Apple H1',
+      noise_reduction: false, // 降噪
+      bluetooth: '5.0',
+      associatedOs: 'iOS 13',
+      weight: 4, // 单支耳机重量
+
+      duration: 6, // 单次聆听时长
+      controlMethod: '按压耳机柄', // 操控方式
+      models: [
+         'A2032',
+         'A2031'
+      ],
+      battery: 93, // mwh
+      case: {
+         weight: 38,
+         duration: 30, // 盒子聆听时长
+         battery: 1.52, // wh
+         width: 21.3,
+         height: 53.5,
+         length: 44.3
+      },
+      chargeMethods: [
+         '闪电',
+         '无线 Qi',
+         'MagSafe'
       ]
    },
 
