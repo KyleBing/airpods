@@ -162,7 +162,7 @@ let app = new Vue({
    data: {
       thumbsUpKey: 'airpods',
       heartActive: false,
-      thumbsUpCount: 20,
+      thumbsUpCount: 0,
 
       // full screen 相关
       showFullScreenBtn: false,
