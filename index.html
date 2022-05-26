@@ -6,11 +6,12 @@
     <meta name='description' content="苹果耳机参数对比,AirPods, AirPods Pro">
     <meta name='keywords' content="苹果耳机参数对比,AirPods, AirPods Pro">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="scss/airpods.css?v=20220510235907">
+    <link rel="stylesheet" href="scss/airpods.css?v=20220526230550">
     <link rel="shortcut icon" href="imgs/favicon.png" type="image/png">
     <link rel="apple-touch-icon" href="imgs/logo.png">
     <script src="./js/vue_2.66.js"></script>
     <script src="./js/moment.min.js"></script>
+    <script src="../../lib/js/axios.min.js"></script>
     <style>
         [v-cloak]{
             display: none;
@@ -27,6 +28,12 @@
                     <img src="./imgs/logo.png" alt="AirPods LOGO">
                     <h1>AirPods 参数大全</h1>
                 </div>
+            </div>
+
+            <div class="thumbs-up" @click="thumbsUp">
+                <img v-if="heartActive" src="imgs/heart_active@3x.png?v=2022-05-26" alt="heart">
+                <img v-else src="imgs/heart_inactive_dark@3x.png?v=2022-05-26" alt="heart">
+                <h3 class="count" v-show="thumbsUpCount">{{thumbsUpCount}}</h3>
             </div>
 
 
@@ -174,7 +181,7 @@
 </div>
 
 
-<script src="js/airpods.js?v=20220510235907"></script>
+<script src="js/airpods.js?v=20220526230550"></script>
 
 <script>
     setTimeout(() => {

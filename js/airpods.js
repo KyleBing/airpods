@@ -160,6 +160,10 @@ const AirPods = [
 let app = new Vue({
    el: '#app',
    data: {
+      thumbsUpKey: 'airpods',
+      heartActive: false,
+      thumbsUpCount: 20,
+
       // full screen 相关
       showFullScreenBtn: false,
       didEnteredFullScreen: false,
@@ -179,6 +183,9 @@ let app = new Vue({
       this.showFullScreenBtn = chromeCore && !mobileMode
       this.relocate(); // relocate items
       this.addDateDuration()
+
+      this.websocketInit()
+      this.getInitThumbsUpCount()
    },
 
    watch: {
@@ -231,8 +238,53 @@ let app = new Vue({
 
             }
          })
-      }
-   }
+      },
+      // 点赞功能
+      getInitThumbsUpCount(){
+         axios.get('../../portal/thumbs-up?key=' + this.thumbsUpKey)
+             .then(res => {
+                if (res.data && res.data.data){
+                   this.thumbsUpCount = res.data.data
+                }
+             })
+      },
+      websocketInit(){
+         this.websocket = new WebSocket('wss://kylebing.cn/ws')
+         this.websocket.onopen = this.websocketOnOpen
+         this.websocket.onmessage = this.websocketOnMessage
+         this.websocket.onerror = this.websocketOnError
+         this.websocket.onclose = this.websocketClose
+      },
+      websocketOnOpen() {
+         this.portStatus = 'success'
+         console.log('websocket has been opened')
+      },
+      websocketOnMessage(res) {
+         let receivedMessage = JSON.parse(res.data)
+         this.thumbsUpCount = receivedMessage.count
+      },
+      websocketOnError() {
+         this.portStatus = 'error'
+         this.websocket.send('on error')
+      },
+      websocketClose() {
+         this.portStatus = 'closed'
+         console.log('socket has closed')
+      },
+
+      thumbsUp(){
+         this.sendMessage(this.thumbsUpKey)
+      },
+
+      sendMessage(key){
+         if (this.websocket){
+            this.heartActive = true
+            this.websocket.send(JSON.stringify({
+               key: key
+            }))
+         }
+      },
+    }
 })
 
 window.onresize = () => {
