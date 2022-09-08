@@ -6,7 +6,7 @@
     <meta name='description' content="苹果耳机参数对比,AirPods, AirPods Pro">
     <meta name='keywords' content="苹果耳机参数对比,AirPods, AirPods Pro">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="scss/airpods.css?v=20220908150625">
+    <link rel="stylesheet" href="scss/airpods.css?v=20220908151219">
     <link rel="shortcut icon" href="imgs/favicon.png" type="image/png">
     <link rel="apple-touch-icon" href="imgs/logo.png">
     <script src="./js/vue_2.66.js"></script>
@@ -138,8 +138,16 @@
                         <div class="value">{{item.case.battery}}<span v-if="item.case.battery" class="unit">wh</span></div>
                     </div>
                     <div class="info-item">
-                        <div class="key">宽·高·厚</div>
-                        <div class="value">{{item.case.length}} × {{item.case.height}} × {{item.case.width}}<span class="unit">mm</span></div>
+                        <div class="key">宽</div>
+                        <div class="value">{{item.case.length}}<span class="unit">mm</span></div>
+                    </div>
+                    <div class="info-item">
+                        <div class="key">高</div>
+                        <div class="value">{{item.case.height}}<span class="unit">mm</span></div>
+                    </div>
+                    <div class="info-item">
+                        <div class="key">厚</div>
+                        <div class="value">{{item.case.width}}<span class="unit">mm</span></div>
                     </div>
                 </div>
             </div>
@@ -179,7 +187,7 @@
 </div>
 
 
-<script src="js/airpods.js?v=20220908150625"></script>
+<script src="js/airpods.js?v=20220908151219"></script>
 
 <script>
     setTimeout(() => {

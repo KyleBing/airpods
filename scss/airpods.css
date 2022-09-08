@@ -494,7 +494,7 @@ tt {
 
 .author {
   text-align: center;
-  color: #7c7c7c;
+  color: #666;
   letter-spacing: 0.3px;
   line-height: 1.4;
   font-size: 0.7rem;
@@ -577,7 +577,7 @@ a.link:active {
 }
 .airpods-name p {
   font-size: 13px;
-  color: #6f6f6f;
+  color: #666;
   font-family: "PrestigeEliteStd", sans-serif;
 }
 .airpods .title {
@@ -602,7 +602,7 @@ a.link:active {
   align-items: flex-start;
   display: flex;
   line-height: 1.5;
-  margin-bottom: 5px;
+  margin-bottom: 4px;
 }
 .info-list .info-item:hover:after {
   border-bottom-color: #202122;
@@ -624,7 +624,7 @@ a.link:active {
   padding-right: 20px;
   z-index: 10;
   background-color: #F7F7F7;
-  color: #6f6f6f;
+  color: #666;
   flex-shrink: 0;
 }
 .info-list .info-item .value-group {
@@ -762,7 +762,7 @@ a.link:active {
   align-items: center;
 }
 .cpu .ice {
-  color: #6f6f6f;
+  color: #666;
   display: flex;
   flex-flow: row nowrap;
   justify-content: flex-end;
@@ -804,7 +804,7 @@ a.link:active {
   font-weight: bold;
 }
 .btn .desc {
-  color: #6f6f6f;
+  color: #666;
   line-height: 1.2;
   font-size: 0.7rem;
 }
@@ -877,13 +877,13 @@ a.link:active {
   justify-content: center;
 }
 .thumbs-up img {
-  width: 50px;
+  width: 40px;
   display: block;
 }
 .thumbs-up .count {
   font-size: 10px;
   text-align: center;
-  color: #7c7c7c;
+  color: #666;
 }
 
 @media (max-width: 768px) {

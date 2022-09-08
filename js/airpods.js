@@ -184,7 +184,7 @@ const AirPods = [
       duration: 6, // 单次聆听时长
       controlMethod: '按压耳机柄,滑动', // 操控方式
       models: [
-         'A2084'
+         // 'A2084'
       ],
       battery: 93, // mwh
       case: {
