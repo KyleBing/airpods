@@ -558,8 +558,8 @@ a.link:active {
   align-items: center;
 }
 .airpods-img img {
-  width: 150px;
-  height: 150px;
+  width: 140px;
+  height: 140px;
   display: block;
 }
 .airpods-name {
@@ -601,7 +601,8 @@ a.link:active {
   justify-content: space-between;
   align-items: flex-start;
   display: flex;
-  line-height: 2;
+  line-height: 1.5;
+  margin-bottom: 5px;
 }
 .info-list .info-item:hover:after {
   border-bottom-color: #202122;
@@ -619,6 +620,7 @@ a.link:active {
   content: "--";
 }
 .info-list .info-item .key {
+  letter-spacing: 1px;
   padding-right: 20px;
   z-index: 10;
   background-color: #F7F7F7;
@@ -655,6 +657,7 @@ a.link:active {
 }
 
 .device-title {
+  letter-spacing: 1px;
   font-size: 0.9rem;
   background-color: white;
   text-align: center;

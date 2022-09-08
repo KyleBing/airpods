@@ -6,7 +6,7 @@
     <meta name='description' content="苹果耳机参数对比,AirPods, AirPods Pro">
     <meta name='keywords' content="苹果耳机参数对比,AirPods, AirPods Pro">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="scss/airpods.css?v=20220613041451">
+    <link rel="stylesheet" href="scss/airpods.css?v=20220908150625">
     <link rel="shortcut icon" href="imgs/favicon.png" type="image/png">
     <link rel="apple-touch-icon" href="imgs/logo.png">
     <script src="./js/vue_2.66.js"></script>
@@ -71,7 +71,7 @@
 <!--                     :src="`./imgs/airpods/${item.name.replace(' ', '_')}.svg`"-->
 <!--                     :alt="item.name">-->
                 <img onerror="this.src = './imgs/airpods/airpods.svg'"
-                     :src="`./imgs/real/${item.name.replace(' ', '_')}.jpg`"
+                     :src="`./imgs/real/${item.img}.jpg`"
                      :alt="item.name">
             </div>
 
@@ -79,7 +79,6 @@
                 <h2>{{item.name}}</h2>
                 <p class="date">
                     <span>{{item.dateInit.replaceAll('-', '.') || '-'}}</span>
-<!--                    <span> ~ {{item.dateEnd}}</span>-->
                 </p>
                 <p>{{item.dateDuration}}</p>
             </div>
@@ -101,10 +100,6 @@
                 </div>
             </div>
 
-            <div class="device">
-                <div class="device-title">耳机</div>
-            </div>
-
             <div class="info-list-group">
                 <div class="info-list">
                     <div class="info-item">
@@ -124,9 +119,12 @@
 
             <div class="device-title">充电盒</div>
 
-
             <div class="info-list-group">
                 <div class="info-list">
+                    <div :class="['info-item', {'invalid': !item.case.chip}]">
+                        <div class="key">芯片</div>
+                        <div class="value">{{item.case.chip}}</div>
+                    </div>
                     <div class="info-item">
                         <div class="key">充电盒重量</div>
                         <div class="value">{{item.case.weight}}<span class="unit">g</span></div>
@@ -181,7 +179,7 @@
 </div>
 
 
-<script src="js/airpods.js?v=20220613041451"></script>
+<script src="js/airpods.js?v=20220908150625"></script>
 
 <script>
     setTimeout(() => {

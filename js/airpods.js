@@ -6,6 +6,8 @@
 const AirPods = [
    {
       name: 'AirPods 1',
+      img: 'AirPods_1',
+      isNew: false,
       dateInit: '2016-12-13',
       dateEnd: '2019-03-20',
       osLast: '6.8.8',
@@ -23,6 +25,7 @@ const AirPods = [
       ],
       battery: 93, // mwh
       case: {
+         chip: '',
          weight: 38,
          battery: 1.52, // wh
          duration: 24, // 盒子聆听时长
@@ -36,6 +39,8 @@ const AirPods = [
    },
    {
       name: 'AirPods 2',
+      img: 'AirPods_2',
+      isNew: false,
       dateInit: '2019-03-20',
       dateEnd: '',
       osLast: '4C165',
@@ -52,6 +57,7 @@ const AirPods = [
       ],
       battery: 93, // mwh
       case: {
+         chip: '',
          weight: 38,
          duration: 24, // 盒子聆听时长
          battery: 1.52, // wh
@@ -63,9 +69,10 @@ const AirPods = [
          '闪电',
       ]
    },
-
    {
       name: 'AirPods Pro',
+      img: 'AirPods_Pro',
+      isNew: false,
       dateInit: '2019-10-30',
       dateEnd: '',
       osLast: '4C165',
@@ -82,6 +89,7 @@ const AirPods = [
       ],
       battery: 93, // mwh
       case: {
+         chip: '',
          weight: 45.6,
          duration: 24, // 盒子聆听时长
          battery: '',
@@ -97,6 +105,8 @@ const AirPods = [
    },
    {
       name: 'AirPods Max',
+      img: 'AirPods_Max',
+      isNew: false,
       dateInit: '2020-12-15',
       dateEnd: '',
       osLast: '4C165',
@@ -112,6 +122,7 @@ const AirPods = [
       ],
       battery: '',
       case: {
+         chip: '',
          weight: 134.8,
          battery: '',
          width: 83.4,
@@ -124,6 +135,8 @@ const AirPods = [
    },
    {
       name: 'AirPods 3',
+      img: 'AirPods_3',
+      isNew: false,
       dateInit: '2021-10-26',
       dateEnd: '',
       osLast: '4C165',
@@ -141,12 +154,47 @@ const AirPods = [
       ],
       battery: 93, // mwh
       case: {
+         chip: '',
          weight: 38,
          duration: 30, // 盒子聆听时长
          battery: 1.52, // wh
          width: 21.3,
          height: 53.5,
          length: 44.3
+      },
+      chargeMethods: [
+         '闪电',
+         '无线 Qi',
+         'MagSafe'
+      ]
+   },
+   {
+      name: 'AirPods Pro 2',
+      img: 'AirPods_Pro_2',
+      isNew: true,
+      dateInit: '2022-09-08',
+      dateEnd: '',
+      osLast: '-',
+      chip: 'Apple H2',
+      noise_reduction: true, // 降噪
+      bluetooth: '5.3',
+      associatedOs: 'iOS 16',
+      weight: 5.3, // 单支耳机重量
+
+      duration: 6, // 单次聆听时长
+      controlMethod: '按压耳机柄,滑动', // 操控方式
+      models: [
+         'A2084'
+      ],
+      battery: 93, // mwh
+      case: {
+         chip: 'Apple U1',
+         weight: 50.8,
+         duration: 24, // 盒子聆听时长
+         battery: '',
+         width: 21.7,
+         height: 45.2,
+         length: 60.6
       },
       chargeMethods: [
          '闪电',
@@ -161,7 +209,7 @@ let app = new Vue({
    el: '#app',
    data: {
       // date
-      dateEnd: '2022.05.27',
+      dateEnd: '2022.09.08',
       // thumb up
       pingPongInterval: null,
       thumbsUpKey: 'airpods',
@@ -217,7 +265,7 @@ let app = new Vue({
                this.heightApp = innerHeight
                // pc
                if (!this.mobileMode){
-                  let scrollFull = 200 * this.chips.length;
+                  let scrollFull = 200 * this.AirPods.length;
                   let heightPage = scrollFull + innerHeight; // 计算可滚动长度
                   document.querySelector('body').style.height = heightPage + 'px';
                   window.onscroll = () => {
