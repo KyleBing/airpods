@@ -6,7 +6,7 @@
 const AirPods = [
    {
       name: 'AirPods 1',
-      img: 'AirPods_1',
+      img: 'https://diary-container.kylebing.cn/FqAanw7FhH7zIDj5adZS3aseE5zT',
       isNew: false,
       dateInit: '2016-12-13',
       dateEnd: '2019-03-20',
@@ -39,7 +39,7 @@ const AirPods = [
    },
    {
       name: 'AirPods 2',
-      img: 'AirPods_2',
+      img: 'https://diary-container.kylebing.cn/FqAanw7FhH7zIDj5adZS3aseE5zT',
       isNew: false,
       dateInit: '2019-03-20',
       dateEnd: '',
@@ -71,7 +71,7 @@ const AirPods = [
    },
    {
       name: 'AirPods Pro',
-      img: 'AirPods_Pro',
+      img: 'https://diary-container.kylebing.cn/FvWpP3XuLVnhVEuXtKhz-wthaEtT',
       isNew: false,
       dateInit: '2019-10-30',
       dateEnd: '',
@@ -105,7 +105,7 @@ const AirPods = [
    },
    {
       name: 'AirPods Max',
-      img: 'AirPods_Max',
+      img: 'https://diary-container.kylebing.cn/FsK8AS45rMk7oKg74Ej5IAQXKuL3',
       isNew: false,
       dateInit: '2020-12-15',
       dateEnd: '',
@@ -135,7 +135,7 @@ const AirPods = [
    },
    {
       name: 'AirPods 3',
-      img: 'AirPods_3',
+      img: 'https://diary-container.kylebing.cn/FgKg6PGMLcVEWYYjV5hpvPnnFIzR',
       isNew: false,
       dateInit: '2021-10-26',
       dateEnd: '',
@@ -170,7 +170,7 @@ const AirPods = [
    },
    {
       name: 'AirPods Pro 2',
-      img: 'AirPods_Pro_2',
+      img: 'https://diary-container.kylebing.cn/Fs4P6VWybmt3pcRs4Q0IEId-CE0s',
       isNew: true,
       dateInit: '2022-09-08',
       dateEnd: '',
@@ -209,7 +209,7 @@ let app = new Vue({
    el: '#app',
    data: {
       // date
-      dateEnd: '2022.09.08',
+      dateEnd: '2023.05.31',
       // thumb up
       pingPongInterval: null,
       thumbsUpKey: 'airpods',
