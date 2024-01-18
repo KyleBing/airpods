@@ -11,10 +11,10 @@
 - AirPods: [https://github.com/KyleBing/airpods](https://github.com/KyleBing/airpods)
 
 ## 线上可访问地址
-- iPhone: [https://kylebing.cn/tools/iphone](https://kylebing.cn/tools/iphone)
-- iPad: [https://kylebing.cn/tools/ipad](https://kylebing.cn/tools/ipad)
-- Apple Chip: [https://kylebing.cn/tools/apple-chip](https://kylebing.cn/tools/apple-chip)
-- AirPods: [https://kylebing.cn/tools/airpods](https://kylebing.cn/tools/airpods)
+- iPhone: [http://kylebing.cn/tools/iphone](http://kylebing.cn/tools/iphone)
+- iPad: [http://kylebing.cn/tools/ipad](http://kylebing.cn/tools/ipad)
+- Apple Chip: [http://kylebing.cn/tools/apple-chip](http://kylebing.cn/tools/apple-chip)
+- AirPods: [http://kylebing.cn/tools/airpods](http://kylebing.cn/tools/airpods)
 
 
 ## 修改说明
