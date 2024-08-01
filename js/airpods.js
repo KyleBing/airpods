@@ -6,7 +6,7 @@
 const AirPods = [
    {
       name: 'AirPods 1',
-      img: 'https://diary-container.kylebing.cn/FqAanw7FhH7zIDj5adZS3aseE5zT',
+      img: 'http://diary-container.kylebing.cn/FqAanw7FhH7zIDj5adZS3aseE5zT',
       isNew: false,
       dateInit: '2016-12-13',
       dateEnd: '2019-03-20',
@@ -39,7 +39,7 @@ const AirPods = [
    },
    {
       name: 'AirPods 2',
-      img: 'https://diary-container.kylebing.cn/FqAanw7FhH7zIDj5adZS3aseE5zT',
+      img: 'http://diary-container.kylebing.cn/FqAanw7FhH7zIDj5adZS3aseE5zT',
       isNew: false,
       dateInit: '2019-03-20',
       dateEnd: '',
@@ -71,7 +71,7 @@ const AirPods = [
    },
    {
       name: 'AirPods Pro',
-      img: 'https://diary-container.kylebing.cn/FvWpP3XuLVnhVEuXtKhz-wthaEtT',
+      img: 'http://diary-container.kylebing.cn/FvWpP3XuLVnhVEuXtKhz-wthaEtT',
       isNew: false,
       dateInit: '2019-10-30',
       dateEnd: '',
@@ -105,7 +105,7 @@ const AirPods = [
    },
    {
       name: 'AirPods Max',
-      img: 'https://diary-container.kylebing.cn/FsK8AS45rMk7oKg74Ej5IAQXKuL3',
+      img: 'http://diary-container.kylebing.cn/FsK8AS45rMk7oKg74Ej5IAQXKuL3',
       isNew: false,
       dateInit: '2020-12-15',
       dateEnd: '',
@@ -135,7 +135,7 @@ const AirPods = [
    },
    {
       name: 'AirPods 3',
-      img: 'https://diary-container.kylebing.cn/FgKg6PGMLcVEWYYjV5hpvPnnFIzR',
+      img: 'http://diary-container.kylebing.cn/FgKg6PGMLcVEWYYjV5hpvPnnFIzR',
       isNew: false,
       dateInit: '2021-10-26',
       dateEnd: '',
@@ -170,7 +170,7 @@ const AirPods = [
    },
    {
       name: 'AirPods Pro 2',
-      img: 'https://diary-container.kylebing.cn/Fs4P6VWybmt3pcRs4Q0IEId-CE0s',
+      img: 'http://diary-container.kylebing.cn/Fs4P6VWybmt3pcRs4Q0IEId-CE0s',
       isNew: true,
       dateInit: '2022-09-08',
       dateEnd: '',
