@@ -6,11 +6,11 @@
 const AirPods = [
    {
       name: 'AirPods 1',
+      identifier: ['AirPods1,1'],
       img: 'http://diary-container.kylebing.cn/FqAanw7FhH7zIDj5adZS3aseE5zT',
       isNew: false,
       dateInit: '2016-12-13',
       dateEnd: '2019-03-20',
-      osLast: '6.8.8',
       chip: 'Apple W1 SoC',
       noise_reduction: false, // 降噪
       bluetooth: '4.2',
@@ -23,22 +23,23 @@ const AirPods = [
          'A1523',
          'A1722'
       ],
-      battery: 93, // mwh
+      battery: 398, // mwh
       case: {
          chip: '',
+         model: [
+            ['A1602', '闪电'],
+         ],
          weight: 38,
          battery: 1.52, // wh
          duration: 24, // 盒子聆听时长
          width: 21.3,
          height: 53.5,
          length: 44.3
-      },
-      chargeMethods: [
-         '闪电',
-      ]
+      }
    },
    {
       name: 'AirPods 2',
+      identifier: ['AirPods2,1'],
       img: 'http://diary-container.kylebing.cn/FqAanw7FhH7zIDj5adZS3aseE5zT',
       isNew: false,
       dateInit: '2019-03-20',
@@ -55,27 +56,28 @@ const AirPods = [
          'A2032',
          'A2031'
       ],
-      battery: 93, // mwh
+      battery: 398, // mwh
       case: {
          chip: '',
+         model: [
+            ['A1602', '闪电'],
+            ['A1938', '闪电, 无线充电'],
+         ],
          weight: 38,
          duration: 24, // 盒子聆听时长
          battery: 1.52, // wh
          width: 21.3,
          height: 53.5,
          length: 44.3
-      },
-      chargeMethods: [
-         '闪电',
-      ]
+      }
    },
    {
       name: 'AirPods Pro',
+      identifier: ['iProd8,1'],
       img: 'http://diary-container.kylebing.cn/FvWpP3XuLVnhVEuXtKhz-wthaEtT',
       isNew: false,
       dateInit: '2019-10-30',
       dateEnd: '',
-      osLast: '4C165',
       chip: 'Apple H1',
       noise_reduction: true, // 降噪
       bluetooth: '5.0',
@@ -85,26 +87,26 @@ const AirPods = [
       duration: 4.5, // 单次聆听时长
       controlMethod: '按压耳机柄', // 操控方式
       models: [
-         'A2084'
+         'A2084', 'A2083'
       ],
-      battery: 93, // mwh
+      battery: 519, // mwh
       case: {
          chip: '',
+         model: [
+            ['A2190', '闪电, 无线充电'],
+            ['A2190', '闪电, MagSafe'],
+         ],
          weight: 45.6,
          duration: 24, // 盒子聆听时长
          battery: '',
          width: 21.7,
          height: 45.2,
          length: 60.6
-      },
-      chargeMethods: [
-         '闪电',
-         '无线 Qi',
-         'MagSafe'
-      ]
+      }
    },
    {
       name: 'AirPods Max',
+      identifier: ['iProd8,6'],
       img: 'http://diary-container.kylebing.cn/FsK8AS45rMk7oKg74Ej5IAQXKuL3',
       isNew: false,
       dateInit: '2020-12-15',
@@ -120,26 +122,27 @@ const AirPods = [
       controlMethod: '按键', // 操控方式
       models: [
       ],
-      battery: '',
+      battery: '664',
       case: {
          chip: '',
+         model: [
+            ['A2096', '闪电'],
+            ['A3184', 'USB-C'],
+         ],
          weight: 134.8,
          battery: '',
          width: 83.4,
          height: 168.6,
          length: 187.3
-      },
-      chargeMethods: [
-         '闪电',
-      ]
+      }
    },
    {
       name: 'AirPods 3',
+      identifier: ['AirPods1,3'],
       img: 'http://diary-container.kylebing.cn/FgKg6PGMLcVEWYYjV5hpvPnnFIzR',
       isNew: false,
       dateInit: '2021-10-26',
       dateEnd: '',
-      osLast: '4C165',
       chip: 'Apple H1',
       noise_reduction: false, // 降噪
       bluetooth: '5.0',
@@ -149,32 +152,31 @@ const AirPods = [
       duration: 6, // 单次聆听时长
       controlMethod: '按压耳机柄', // 操控方式
       models: [
-         'A2032',
-         'A2031'
+         'A2564',
+         'A2565'
       ],
-      battery: 93, // mwh
+      battery: 345, // mwh
       case: {
          chip: '',
+         model: [
+            ['A2897', '闪电'],
+            ['A2566', '闪电, MagSafe'],
+         ],
          weight: 38,
          duration: 30, // 盒子聆听时长
          battery: 1.52, // wh
          width: 21.3,
          height: 53.5,
          length: 44.3
-      },
-      chargeMethods: [
-         '闪电',
-         '无线 Qi',
-         'MagSafe'
-      ]
+      }
    },
    {
       name: 'AirPods Pro 2',
+      identifier: ['AirPodsPro1,2', 'AirPods3,1'],
       img: 'http://diary-container.kylebing.cn/Fs4P6VWybmt3pcRs4Q0IEId-CE0s',
       isNew: true,
       dateInit: '2022-09-08',
       dateEnd: '',
-      osLast: '-',
       chip: 'Apple H2',
       noise_reduction: true, // 降噪
       bluetooth: '5.3',
@@ -184,32 +186,94 @@ const AirPods = [
       duration: 6, // 单次聆听时长
       controlMethod: '按压耳机柄,滑动', // 操控方式
       models: [
-         // 'A2084'
+         'A2931', 'A2699', 'A2698'
       ],
-      battery: 93, // mwh
+      battery: 523, // mwh
       case: {
          chip: 'Apple U1',
+         model: [
+            ['A2700', '闪电, MagSafe'],
+            ['A2968', 'USB-C, MagSafe'],
+         ],
          weight: 50.8,
          duration: 24, // 盒子聆听时长
          battery: '',
          width: 21.7,
          height: 45.2,
          length: 60.6
-      },
-      chargeMethods: [
-         '闪电',
-         '无线 Qi',
-         'MagSafe'
-      ]
+      }
    },
+   {
+      name: 'AirPods 4',
+      identifier: ['AirPods1,4', 'AirPods3,2'],
+      img: 'http://diary-container.kylebing.cn/FhR6O_x_s7cDWdptY3Gs7C7lub9u',
+      isNew: false,
+      dateInit: '2024-09-20',
+      dateEnd: '',
+      chip: 'Apple H2',
+      noise_reduction: false, // 降噪
+      bluetooth: '5.3',
+      associatedOs: '',
+      weight: 4, // 单支耳机重量
 
+      duration: 5, // 单次聆听时长
+      controlMethod: '按压耳机柄', // 操控方式
+      models: [
+         'A3053', 'A3050', 'A3054'
+      ],
+      battery: 0 , // mwh
+      case: {
+         chip: '',
+         model: [
+            ['A3058', 'USB-C'],
+         ],
+         weight: 32.3,
+         duration: 30, // 盒子聆听时长
+         battery: 1.997, // wh
+         width: 21.2,
+         height: 46.2,
+         length: 50.1,
+      }
+   },
+   {
+      name: 'AirPods 4 降噪',
+      identifier: ['AirPods1,4', 'AirPods3,3'],
+      img: 'http://diary-container.kylebing.cn/FhR6O_x_s7cDWdptY3Gs7C7lub9u',
+      isNew: false,
+      dateInit: '2024-09-20',
+      dateEnd: '',
+      chip: 'Apple H2',
+      noise_reduction: true, // 降噪
+      bluetooth: '5.3',
+      associatedOs: '',
+      weight: 4, // 单支耳机重量
+
+      duration: 5, // 单次聆听时长
+      controlMethod: '按压耳机柄', // 操控方式
+      models: [
+         'A3056', 'A3055', 'A3057'
+      ],
+      battery: 0 , // mwh
+      case: {
+         chip: '',
+         model: [
+            ['A3059', 'USB-C, 无线充电'],
+         ],
+         weight: 34.7,
+         duration: 30, // 盒子聆听时长
+         battery: 1.997, // wh
+         width: 21.2,
+         height: 46.2,
+         length: 50.1,
+      },
+   },
 ]
 
 let app = new Vue({
    el: '#app',
    data: {
       // date
-      dateEnd: '2023.05.31',
+      dateEnd: '2025.09.02',
       // thumb up
       pingPongInterval: null,
       thumbsUpKey: 'airpods',

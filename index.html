@@ -6,7 +6,7 @@
     <meta name='description' content="苹果耳机参数对比,AirPods, AirPods Pro">
     <meta name='keywords' content="苹果耳机参数对比,AirPods, AirPods Pro">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="scss/airpods.css?v=20240801155448">
+    <link rel="stylesheet" href="scss/airpods.css?v=20250902120119">
     <link rel="shortcut icon" href="imgs/favicon.png" type="image/png">
     <link rel="apple-touch-icon" href="imgs/logo.png">
     <script src="./js/vue_2.66.js"></script>
@@ -58,13 +58,10 @@
 <!--                    <a class="link" href="http://kylebing.cn/tools/apple-watch">Watch</a>-->
 <!--                </p>-->
                 <p>·</p>
-                <p>
+                <small>
                     <span>2022.01.28</span> ~
                     <span>{{dateEnd}}</span>
-                </p>
-                <p>·</p>
-                <p>Q群：<a class="link" target="_blank" href="https://jq.qq.com/?_wv=1027&k=Z8E0HrWA">920084833</a></p>
-
+                </small>
             </div>
         </div>
 
@@ -118,6 +115,10 @@
                         <div class="key">单耳机电量</div>
                         <div class="value">{{item.battery || '--'}}<span v-if="item.battery" class="unit">mwh</span></div>
                     </div>
+                    <div :class="['info-item', {'invalid': !item.models.length > 0}]">
+                        <div class="key">型号</div>
+                        <div class="value">{{item.models.join(', ')}}</div>
+                    </div>
                 </div>
             </div>
 
@@ -153,27 +154,12 @@
                         <div class="key">厚</div>
                         <div class="value">{{item.case.width}}<span class="unit">mm</span></div>
                     </div>
-                </div>
-            </div>
-
-            <div class="device-title">其它</div>
-            <div class="info-list-group">
-                <div class="info-list">
-                    <div :class="['info-item', {'invalid': !item.osLast}]">
-                        <div class="key">最终系统</div>
-                        <div class="value">{{item.osLast}}</div>
-                    </div>
-                    <div :class="['info-item', {'invalid': !item.models.length > 0}]">
-                        <div class="key">型号</div>
-                        <div class="value">{{item.models.join(', ')}}</div>
-                    </div>
-                    <div :class="['info-item', {'invalid': !item.chargeMethods.length > 0}]">
-                        <div class="key">充电方式</div>
-                        <div class="value">{{item.chargeMethods.join(', ')}}</div>
+                    <div class="info-item" v-for="model in item.case.model">
+                        <div class="key">型号 ({{model[0]}})</div>
+                        <div class="value">{{model[1]}}</div>
                     </div>
                 </div>
             </div>
-
         </div>
 
         <div class="gap"></div>
@@ -191,7 +177,7 @@
 </div>
 
 
-<script src="js/airpods.js?v=20240801155448"></script>
+<script src="js/airpods.js?v=20250902120119"></script>
 
 <script>
     setTimeout(() => {
