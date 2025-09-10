@@ -1,6 +1,6 @@
 /*****************************
  Create Date: 20220123203326
- Update Date: 20220123203329
+ Update Date: 20250910095003
  *****************************/
 
 const AirPods = [
@@ -174,7 +174,7 @@ const AirPods = [
       name: 'AirPods Pro 2',
       identifier: ['AirPodsPro1,2', 'AirPods3,1'],
       img: 'http://diary-container.kylebing.cn/Fs4P6VWybmt3pcRs4Q0IEId-CE0s',
-      isNew: true,
+      isNew: false,
       dateInit: '2022-09-08',
       dateEnd: '',
       chip: 'Apple H2',
@@ -266,6 +266,38 @@ const AirPods = [
          height: 46.2,
          length: 50.1,
       },
+   },
+   {
+      name: 'AirPods Pro 3',
+      identifier: [],
+      img: 'http://diary-container.kylebing.cn/FpYdpOm_yKKEhi1RIgpFB1HDHhRX',
+      isNew: true,
+      dateInit: '2025-09-10',
+      dateEnd: '',
+      chip: 'Apple H2',
+      noise_reduction: true, // 降噪
+      bluetooth: '5.3',
+      associatedOs: 'iOS 26',
+      weight: 5.55, // 单支耳机重量
+
+      duration: 8, // 单次聆听时长
+      controlMethod: '按压耳机柄,滑动', // 操控方式
+      models: [
+         'A2931', 'A2699', 'A2698'
+      ],
+      battery: 0, // mwh
+      case: {
+         chip: 'Apple U2',
+         model: [
+            ['', 'USB-C, MagSafe'],
+         ],
+         weight: 43.99,
+         duration: 24, // 盒子聆听时长
+         battery: '',
+         width: 21.8,
+         height: 47.2,
+         length: 62.2,
+      }
    },
 ]
 
