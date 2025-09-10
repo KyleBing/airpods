@@ -282,9 +282,7 @@ const AirPods = [
 
       duration: 8, // 单次聆听时长
       controlMethod: '按压耳机柄,滑动', // 操控方式
-      models: [
-         'A2931', 'A2699', 'A2698'
-      ],
+      models: [],
       battery: 0, // mwh
       case: {
          chip: 'Apple U2',
