@@ -6,7 +6,7 @@
     <meta name='description' content="苹果耳机参数对比,AirPods, AirPods Pro">
     <meta name='keywords' content="苹果耳机参数对比,AirPods, AirPods Pro">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="scss/airpods.css?v=20250910102009">
+    <link rel="stylesheet" href="scss/airpods.css?v=20250910102914">
     <link rel="shortcut icon" href="imgs/favicon.png" type="image/png">
     <link rel="apple-touch-icon" href="imgs/logo.png">
     <script src="./js/vue_2.66.js"></script>
@@ -159,8 +159,14 @@
                         <div class="key">型号 ({{model[0]}})</div>
                         <div class="value">{{model[1]}}</div>
                     </div>
+
+                    <div class="info-item">
+                        <div class="key">iOS</div>
+                        <div class="value">{{item.associatedOs || '---'}}</div>
+                    </div>
                 </div>
             </div>
+
         </div>
 
         <div class="gap"></div>
@@ -178,7 +184,7 @@
 </div>
 
 
-<script src="js/airpods.js?v=20250910102009"></script>
+<script src="js/airpods.js?v=20250910102914"></script>
 
 <script>
     setTimeout(() => {

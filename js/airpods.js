@@ -277,7 +277,7 @@ const AirPods = [
       chip: 'Apple H2',
       noise_reduction: true, // 降噪
       bluetooth: '5.3',
-      associatedOs: 'iOS 26',
+      associatedOs: 'iOS 26 启用相机、个性音量',
       weight: 5.55, // 单支耳机重量
 
       duration: 8, // 单次聆听时长
